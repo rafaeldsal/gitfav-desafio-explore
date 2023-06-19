@@ -45,6 +45,7 @@ export class Favorite {
 
     this.entries = filteredEntries;
 
+    this.noFavorite();
     this.update();
     this.save();
   }
@@ -70,12 +71,20 @@ export class FavoriteViews extends Favorite {
     };
   }
 
+  noFavorite() {
+    const noFavoriteElement = document.querySelector(".no-favorite");
+    console.log(this.entries.length);
+    if (this.entries.length > 0) {
+      noFavoriteElement.classList.add("hide");
+    } else {
+      noFavoriteElement.classList.remove("hide");
+    }
+  }
+
   update() {
     this.removeAllTr();
 
     this.entries.forEach((user) => {
-      console.log(user);
-
       const row = this.createRow();
 
       row.querySelector(
@@ -98,6 +107,7 @@ export class FavoriteViews extends Favorite {
         }
       };
 
+      this.noFavorite();
       this.tbody.append(row);
     });
   }

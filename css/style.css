@@ -107,6 +107,8 @@ table {
   box-shadow: 0 0.5rem 1rem -1rem rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
   border: 1px solid #4a808c;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   border-collapse: separate;
   border-spacing: 0;
   overflow: hidden;
@@ -170,4 +172,36 @@ td .remove {
   border: none;
   color: red;
   cursor: pointer;
+}
+
+.no-favorite {
+  display: flex;
+  gap: 6rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60rem;
+  border-radius: 1rem;
+  border: 1px solid #4a808c;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.no-favorite img {
+  width: 13rem;
+  height: 13rem;
+}
+
+.no-favorite p {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 6.2;
+  color: #4e5455;
+}
+
+.hide {
+  display: none;
 }
